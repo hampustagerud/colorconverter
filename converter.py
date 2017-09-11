@@ -34,6 +34,9 @@ def main():
     while command != "exit" and command != "q":
         command = input("> ").strip()
 
+        if command == "?":
+            printHelp()
+
 def readFile(filename):
     try:
         with open(filename) as f:
@@ -45,6 +48,11 @@ def readFile(filename):
 
 def evaluate(string):
     print(string)
+
+def printHelp():
+    print("?\tPrint this help")
+    print("q\tExit")
+    print("exit\tExit")
 
 if __name__ == "__main__":
     main()
