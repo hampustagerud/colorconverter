@@ -25,9 +25,10 @@
 
 import sys 
 
-colors = {}
-
 def main():
+    global colors
+    colors = {}
+
     if len(sys.argv) > 1: 
         for i in range(1, len(sys.argv)):
             readFile(sys.argv[i])
