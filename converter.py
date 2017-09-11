@@ -35,10 +35,13 @@ def main():
         command = input("> ").strip()
 
 def readFile(filename):
-    with open(filename) as f:
-        lines = f.read().splitlines()
-        for line in lines:
-            evaluate(line)
+    try:
+        with open(filename) as f:
+            lines = f.read().splitlines()
+            for line in lines:
+                evaluate(line)
+    except FileNotFoundError:
+        print(filename + " is not a valid file")
 
 def evaluate(string):
     print(string)
