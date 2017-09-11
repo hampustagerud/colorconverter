@@ -54,6 +54,11 @@ class Color:
                 self.green = (value >> 8) & 0xFF
                 self.blue = value & 0xFF
 
+    def __repr__(self):
+        return ("Hex: %s, rgba(%s, %s, %s, %s)" % 
+                (self.hex, self.red, self.green, self.blue, self.alpha))
+    __str__ = __repr__
+
 def main():
     global colors
     colors = {}
