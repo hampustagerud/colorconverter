@@ -34,7 +34,7 @@ class Color:
 
     def __init__(self, color):
         if color.startswith("#"):
-            self.hex = color
+            self.hex = color.upper()
 
             if len(color) < 6:
                 temp = "#"
