@@ -76,7 +76,7 @@ def main():
                     readFile(parts[i])
             elif parts[0].lower() == "print":
                 for key in colors.keys():
-                    print(key + ":" + colors[key])
+                    print("%s : %s" % (key, str(colors[key])))
 
 def readFile(filename):
     try:
@@ -85,7 +85,7 @@ def readFile(filename):
             for line in lines:
                 evaluate(line)
     except FileNotFoundError:
-        print(filename + " is not a valid file")
+        print("%s is not a valid file" % filename)
 
 def evaluate(string):
     print(string)
