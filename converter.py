@@ -94,6 +94,13 @@ def readFile(filename):
 
 def evaluate(string):
     print(string)
+def isHex(string):
+    ranges = [(48, 57), (65, 70)]
+    for char in string.strip():
+        if (char != "#" and not 
+            any(lower <= ord(char) <= upper for (lower, upper) in ranges)):
+            return False
+    return True
 
 def printHelp():
     print("\t?\tPrint this help")
