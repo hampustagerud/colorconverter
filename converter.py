@@ -33,7 +33,7 @@ def main():
             readFile(sys.argv[i])
 
     command = ""
-    while command != "exit" and command != "q":
+    while command.lower() != "exit" and command.lower() != "q":
         command = input("> ").strip()
         
         if len(command) > 0:
@@ -41,10 +41,10 @@ def main():
 
             if parts[0] == "?":
                 printHelp()
-            elif parts[0] == "file" and len(parts) > 1:
+            elif parts[0].lower() == "file" and len(parts) > 1:
                 for i in range(1, len(parts)):
                     readFile(parts[i])
-            elif parts[0] == "print":
+            elif parts[0].lower() == "print":
                 for key in colors.keys():
                     print(key + ":" + colors[key])
 
