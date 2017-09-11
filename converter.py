@@ -106,7 +106,17 @@ def readFile(filename):
         print("%s is not a valid file" % filename)
 
 def evaluate(string):
-    print(string)
+    if string.startswith("#") or len(string) == 0:
+        return
+    
+    global colors
+    parts = string.split(":")
+    
+    if len(parts) == 2 and isHex(parts[1]):
+        colors[parts[0].strip()] = Color(parts[1].strip())
+    else:
+        print("%s is not a valid color" % string)
+
 def isHex(string):
     ranges = [(48, 57), (65, 70)]
     for char in string.strip():
