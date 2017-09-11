@@ -34,7 +34,7 @@ def main():
                     evaluate(line);
 
     command = ""
-    while command != "exit":
+    while command != "exit" and command != "q":
         command = input("> ").strip()
 
 def evaluate(string):
