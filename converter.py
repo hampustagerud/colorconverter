@@ -33,9 +33,12 @@ def main():
     command = ""
     while command != "exit" and command != "q":
         command = input("> ").strip()
+        
+        if len(command) > 0:
+            parts = command.split(" ")
 
-        if command == "?":
-            printHelp()
+            if parts[0] == "?":
+                printHelp()
 
 def readFile(filename):
     try:
