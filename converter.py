@@ -39,6 +39,9 @@ def main():
 
             if parts[0] == "?":
                 printHelp()
+            elif parts[0] == "file" and len(parts) > 1:
+                for i in range(1, len(parts)):
+                    readFile(parts[i])
 
 def readFile(filename):
     try:
@@ -56,6 +59,7 @@ def printHelp():
     print("\t?\tPrint this help")
     print("\tq\tExit")
     print("\texit\tExit")
+    print("\tfile [filenames]\t Load a files with given filenames, separated by spaces")
 
 if __name__ == "__main__":
     main()
