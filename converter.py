@@ -23,10 +23,22 @@
 #  SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
+import sys 
+
 def main():
+    if len(sys.argv) > 1: 
+        for i in range(1, len(sys.argv)):
+            with open(sys.argv[i]) as f:
+                lines = f.read().splitlines()
+                for line in lines:
+                    evaluate(line);
+
     command = ""
     while command != "exit":
         command = input("> ").strip()
+
+def evaluate(string):
+    print(string)
 
 if __name__ == "__main__":
     main()
