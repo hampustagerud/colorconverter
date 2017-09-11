@@ -25,6 +25,8 @@
 
 import sys 
 
+colors = {}
+
 def main():
     if len(sys.argv) > 1: 
         for i in range(1, len(sys.argv)):
@@ -42,6 +44,9 @@ def main():
             elif parts[0] == "file" and len(parts) > 1:
                 for i in range(1, len(parts)):
                     readFile(parts[i])
+            elif parts[0] == "print":
+                for key in colors.keys():
+                    print(key + ":" + colors[key])
 
 def readFile(filename):
     try:
