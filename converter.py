@@ -25,6 +25,35 @@
 
 import sys 
 
+class Color:
+    hex = ""
+    red = 0
+    green = 0
+    blue = 0
+    alpha = 1
+
+    def __init__(self, color):
+        if color.startswith("#"):
+            self.hex = color
+
+            if len(color) < 6:
+                temp = "#"
+                for i in range(1, len(color)):
+                    temp += color[i]
+                    temp += color[i]
+                color = temp
+
+            value = int(color.lstrip("#"), 16)
+            if len(color) > 7:
+                self.red = (value >> 24) & 0xFF
+                self.green = (value >> 16) & 0xFF
+                self.blue = (value >> 8) & 0xFF
+                self.alpha = value & 0xFF
+            else:
+                self.red = (value >> 16) & 0xFF
+                self.green = (value >> 8) & 0xFF
+                self.blue = value & 0xFF
+
 def main():
     global colors
     colors = {}
