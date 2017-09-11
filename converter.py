@@ -82,6 +82,8 @@ def main():
             elif parts[0].lower() == "print":
                 for key in colors.keys():
                     print("%s : %s" % (key, str(colors[key])))
+            else:
+                print("%s is not a valid command, use '?' for help" % command)
 
 def readFile(filename):
     try:
