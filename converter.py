@@ -53,9 +53,9 @@ def evaluate(string):
     print(string)
 
 def printHelp():
-    print("?\tPrint this help")
-    print("q\tExit")
-    print("exit\tExit")
+    print("\t?\tPrint this help")
+    print("\tq\tExit")
+    print("\texit\tExit")
 
 if __name__ == "__main__":
     main()
