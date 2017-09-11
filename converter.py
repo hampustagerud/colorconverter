@@ -81,6 +81,8 @@ def main():
                     readFile(parts[i])
             elif parts[0].lower() == "print":
                 print()
+            elif parts[0].lower() == "color":
+                evaluate("".join(parts[i] for i in range(1, len(parts))))
             else:
                 print("%s is not a valid command, use '?' for help" % command)
 
