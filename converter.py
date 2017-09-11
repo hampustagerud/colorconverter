@@ -107,7 +107,8 @@ def printHelp():
     print("\tq\tExit")
     print("\texit\tExit")
     print("\tprint\tPrint all colors")
-    print("\tfile [filenames]\t Load a files with given filenames, separated by spaces")
+    print("\tfile [filenames]\t "
+          "Load a files with given filenames, separated by spaces")
 
 if __name__ == "__main__":
     main()
