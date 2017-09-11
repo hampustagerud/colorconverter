@@ -28,14 +28,17 @@ import sys
 def main():
     if len(sys.argv) > 1: 
         for i in range(1, len(sys.argv)):
-            with open(sys.argv[i]) as f:
-                lines = f.read().splitlines()
-                for line in lines:
-                    evaluate(line);
+            readFile(sys.argv[i])
 
     command = ""
     while command != "exit" and command != "q":
         command = input("> ").strip()
+
+def readFile(filename):
+    with open(filename) as f:
+        lines = f.read().splitlines()
+        for line in lines:
+            evaluate(line)
 
 def evaluate(string):
     print(string)
