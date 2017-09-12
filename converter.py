@@ -80,25 +80,45 @@ def main():
                 for i in range(1, len(parts)):
                     readFile(parts[i])
             elif parts[0].lower() == "print":
-                printColors()
+                if len(parts) > 1:
+                    printColors(parts[1])
+                else:
+                    printColors()
             elif parts[0].lower() == "color":
                 evaluate("".join(parts[i] for i in range(1, len(parts))))
             else:
                 print("%s is not a valid command, use '?' for help" % command)
 
-def printColors():
+def printColors(filename = ""):
     global colors
     format = input("Specify format "
             "(Name=$N, Red=$R, Green=$G, Blue=$B, Alpha=$A, Hex=$H): ")
-    for key in colors.keys():
-        temp = format
-        print(temp.replace("$N", str(key)) 
-                  .replace("$R", str(colors[key].red))
-                  .replace("$G", str(colors[key].green))
-                  .replace("$B", str(colors[key].blue))
-                  .replace("$A", str(colors[key].alpha))
-                  .replace("$H", str(colors[key].hex))
-        )
+
+    try:
+        if len(filename) > 0:
+            f = open(filename, "w")
+        else:
+            f = None
+
+        for key in colors.keys():
+            temp = format
+            temp = (temp.replace("$N", str(key))
+                        .replace("$R", str(colors[key].red))
+                        .replace("$G", str(colors[key].green))
+                        .replace("$B", str(colors[key].blue))
+                        .replace("$A", str(colors[key].alpha))
+                        .replace("$H", str(colors[key].hex))
+            )
+
+            if f is None:
+                print(temp)
+            else:
+                print(temp, file=f)
+    except IOError:
+        print("Could not save %s" % filename)
+
+    if f is not None:
+        f.close()
 
 def readFile(filename):
     try:
