@@ -90,7 +90,7 @@ def main():
                     printColors()
             elif parts[0].lower() == "color":
                 evaluate("".join(parts[i] for i in range(1, len(parts))))
-            else:
+            elif parts[0].lower() != "exit" and parts[0].lower() != "q": 
                 print("%s is not a valid command, use '?' for help" % command)
 
 def printColors(filename = ""):
