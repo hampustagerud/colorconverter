@@ -39,7 +39,7 @@ Green:#00FF00FF
 
 ## Future
 - [ ] Comment code
-- [ ] Ability to use RGB(A) for contructing Color objects
+- [ ] Ability to use RGB(A) for constructing Color objects
 - [x] Python2 compability
 
 ## License
