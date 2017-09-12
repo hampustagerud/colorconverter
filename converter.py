@@ -153,6 +153,7 @@ def printHelp():
     print("\t?\tPrint this help")
     print("\tq\tExit")
     print("\texit\tExit")
+    print("\tcolor [name:hex]\tAdd color with specified name and value")
     print("\tprint [filename]\tPrint all colors, to file if filename is provided")
     print("\tfile [filenames]\t "
           "Load a files with given filenames, separated by spaces")
