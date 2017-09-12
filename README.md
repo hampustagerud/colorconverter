@@ -27,7 +27,7 @@ file [filenames] - Loads one or more text files with colors
 
 ## Files
 Files are simple textfiles using following format:
-```
+```ini
 # Comments goes here
 [Name:Hex]
 
@@ -37,8 +37,28 @@ White:#FFF
 Green:#00FF00FF
 ```
 
+## Example
+```bash
+user@computer$ python converter.py 
+> color black:#000
+> color white:#FFF
+> color red:#F00
+> color green:#0F0
+> color blue:#00F
+> print
+Specify format (Name=$N, Red=$R, Green=$G, Blue=$B, Alpha=$A, Hex=$H): $N: $H, rgba($R, $G, $B, $A)
+blue: #00F, rgba(0, 0, 255, 1)
+green: #0F0, rgba(0, 255, 0, 1)
+white: #FFF, rgba(255, 255, 255, 1)
+black: #000, rgba(0, 0, 0, 1)
+red: #F00, rgba(255, 0, 0, 1)
+```
+
 ## Future
 - [ ] Comment code
+- [ ] Increase safety for Hex values (count bits etc)
+- [ ] Remove case sensitivity for Hex values
+- [ ] Better formatting options
 - [ ] Ability to use RGB(A) for constructing Color objects
 - [x] Python2 compability
 
