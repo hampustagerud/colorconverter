@@ -80,23 +80,25 @@ def main():
                 for i in range(1, len(parts)):
                     readFile(parts[i])
             elif parts[0].lower() == "print":
-                print()
+                printColors()
             elif parts[0].lower() == "color":
                 evaluate("".join(parts[i] for i in range(1, len(parts))))
             else:
                 print("%s is not a valid command, use '?' for help" % command)
 
-def print():
+def printColors():
     global colors
     format = input("Specify format "
-                   "(Red=$R, Green=$G, Blue=$B, Alpha=$A, Hex=$H): ")
-    for color in colors:
-        print(format.replace("$R", str(color.red))
-                    .replace("$G", str(color.green))
-                    .replace("$B", str(color.blue))
-                    .replace("$A", str(color.alpha))
-                    .replace("$H", color.hex))
-
+            "(Name=$N, Red=$R, Green=$G, Blue=$B, Alpha=$A, Hex=$H): ")
+    for key in colors.keys():
+        temp = format
+        print(temp.replace("$N", str(key)) 
+                  .replace("$R", str(colors[key].red))
+                  .replace("$G", str(colors[key].green))
+                  .replace("$B", str(colors[key].blue))
+                  .replace("$A", str(colors[key].alpha))
+                  .replace("$H", str(colors[key].hex))
+        )
 
 def readFile(filename):
     try:
