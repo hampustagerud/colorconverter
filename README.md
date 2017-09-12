@@ -13,7 +13,7 @@ Name can be any string while Hex must be a string starting with "#". The rest of
 Name and Hex must be seperated by a colon (':') but any whitespace added for readability should be stripped.
 
 ## Application
-Application is written with Python3 and currently not backwards compatible with Python2 :(
+Application is written with Python3 ~and currently not backwards compatible with Python2 :(~ but should work fine with Python2 now :)
 
 ```
 Commands:
@@ -40,7 +40,7 @@ Green:#00FF00FF
 ## Future
 - [ ] Comment code
 - [ ] Ability to use RGB(A) for contructing Color objects
-- [ ] Python2 compability
+- [x] Python2 compability
 
 ## License
 
