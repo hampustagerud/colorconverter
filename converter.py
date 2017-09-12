@@ -163,5 +163,10 @@ def printHelp():
           "Load a files with given filenames, separated by spaces")
 
 if __name__ == "__main__":
+    try:
+        input = raw_input
+    except NameError:
+        pass
+
     main()
 
